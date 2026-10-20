@@ -1,0 +1,102 @@
+%==================================================================
+% BAB 1 PENDAHULUAN
+% Struktur mengikuti Pedoman 6.1 (Kerangka Proposal Tugas Akhir)
+%  1.1 Latar Belakang
+%  1.2 Perumusan Masalah
+%  1.3 Tujuan
+%  1.4 Manfaat Tugas Akhir
+%  1.5 Batasan Masalah
+%==================================================================
+\chapter{PENDAHULUAN}
+\label{chap:pendahuluan}
+
+%------------------------------------------------------------------
+\section{Latar Belakang}
+%------------------------------------------------------------------
+
+Indonesia merupakan negara penghasil ikan yang besar, sehingga mutu
+produk perikanan menjadi faktor penting dalam rantai perdagangan.
+Ikan termasuk bahan pangan yang sangat mudah mengalami kemunduran mutu
+setelah ditangkap. Menurut \citet{estiasih2015}, proses kemunduran mutu
+ikan berlangsung melalui tahap \textit{rigor mortis}, penguraian
+senyawa oleh enzim, dan penguraian oleh aktivitas mikroorganisme.
+Ketiga tahap tersebut berjalan cepat, terutama bila ikan tidak segera
+didinginkan.
+
+Penilaian kesegaran ikan di pasar tradisional umumnya dilakukan secara
+organoleptik, yaitu dengan mengamati warna insang, mata, tekstur, dan
+bau. Cara ini membutuhkan tenaga terlatih, bersifat subjektif, dan sulit
+dilakukan dalam jumlah besar. Beberapa penelitian menunjukkan bahwa
+penilaian berbasis citra digital dapat menjadi alternatif yang lebih
+konsisten \citep{prasetyo2021}. Citra mata dan insang ikan menyimpan
+informasi warna yang berkorelasi dengan tingkat kesegaran, sehingga
+dapat diolah secara kuantitatif \citep{gonzalez2018}.
+
+Pengolahan citra digital telah banyak dimanfaatkan untuk pemeriksaan
+mutu bahan pangan secara tidak merusak. Namun, pemanfaatan teknologi
+tersebut di lingkungan pasar ikan Banyuwangi belum banyak dilakukan,
+padahal kebutuhan akan alat bantu penilaian yang cepat dan murah cukup
+tinggi. Berdasarkan uraian tersebut, penelitian ini merancang bangun
+sistem deteksi kesegaran ikan berbasis pengolahan citra digital dan
+jaringan saraf tiruan yang diharapkan dapat membantu pembeli maupun
+pedagang dalam menentukan mutu ikan secara cepat dan objektif.
+
+%------------------------------------------------------------------
+\section{Perumusan Masalah}
+%------------------------------------------------------------------
+
+Berdasarkan latar belakang di atas, rumusan masalah pada penelitian ini
+adalah sebagai berikut.
+\begin{packed_enum}
+  \item Bagaimana merancang sistem akuisisi citra mata dan insang ikan
+        yang menghasilkan gambar dengan pencahayaan konsisten?
+  \item Bagaimana mengekstraksi ciri warna citra ikan pada ruang warna
+        \textit{Hue, Saturation, Value} (HSV) sehingga dapat membedakan
+        tingkat kesegaran ikan?
+  \item Bagaimana kinerja jaringan saraf tiruan dalam mengklasifikasikan
+        tingkat kesegaran ikan berdasarkan ciri warna yang diperoleh?
+\end{packed_enum}
+
+%------------------------------------------------------------------
+\section{Tujuan}
+%------------------------------------------------------------------
+
+Tujuan yang ingin dicapai pada penelitian ini adalah:
+\begin{packed_enum}
+  \item merancang bangun sistem deteksi kesegaran ikan berbasis
+        pengolahan citra digital;
+  \item mengimplementasikan jaringan saraf tiruan untuk
+        mengklasifikasikan tingkat kesegaran ikan; dan
+  \item mengukur tingkat akurasi sistem yang dirancang pada data uji
+        yang belum pernah digunakan pada proses pelatihan.
+\end{packed_enum}
+
+%------------------------------------------------------------------
+\section{Manfaat Tugas Akhir}
+%------------------------------------------------------------------
+
+Manfaat yang diharapkan dari penelitian ini adalah sebagai berikut.
+\begin{packed_enum}
+  \item Bagi pembeli dan pedagang ikan, tersedia alat bantu penilaian
+        kesegaran yang cepat, murah, dan tidak merusak produk.
+  \item Bagi Program Studi \prodi, menjadi contoh penerapan pengolahan
+        citra digital dan pembelajaran mesin pada permasalahan nyata.
+  \item Bagi peneliti selanjutnya, menjadi rujukan awal pengembangan
+        sistem sejenis dengan cakupan jenis ikan yang lebih luas.
+\end{packed_enum}
+
+%------------------------------------------------------------------
+\section{Batasan Masalah}
+%------------------------------------------------------------------
+
+Agar pembahasan terarah, penelitian ini dibatasi pada hal-hal berikut.
+\begin{packed_enum}
+  \item Objek penelitian adalah ikan bandeng (\textit{Chanos chanos})
+        yang diperoleh dari Pasar Banyuwangi.
+  \item Ciri yang digunakan terbatas pada ciri warna pada ruang HSV,
+        tidak mencakup ciri bentuk maupun tekstur.
+  \item Pengambilan citra dilakukan di dalam kotak akusisi dengan
+        pencahayaan buatan yang tetap.
+  \item Klasifikasi dibagi menjadi tiga kelas, yaitu segar, cukup segar,
+        dan tidak segar, mengacu pada kriteria organoleptik.
+\end{packed_enum}

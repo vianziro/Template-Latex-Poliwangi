@@ -1,0 +1,66 @@
+%==================================================================
+% FILE UTAMA — PROPOSAL TUGAS AKHIR
+% Politeknik Negeri Banyuwangi
+% Acuan: Pedoman Mutu Tugas Akhir Poliwangi 2023, Tabel 6.3
+%
+% Berkas ini dipisah dari Laporan supaya mudah dipakai sendiri-sendiri.
+% Folder proposal/ sudah lengkap: identitas, bab, gambar, kode, referensi.
+%
+% Cara memakai:
+%   1. Isi identitas di  a0-identitas.tex
+%   2. Tulis isi bab di  b1-bab1.tex sampai b3-bab3.tex
+%   3. Tambah referensi di  a9-pustaka.bib
+%   4. Kompilasi: pdflatex -> bibtex -> pdflatex -> pdflatex
+%==================================================================
+
+\documentclass[12pt,a4paper,oneside,fleqn]{report}
+
+\input{a0-identitas}
+\input{untouch/xx-preambles}
+
+% Dokumen ini adalah Proposal
+\providecommand{\Jenis}{Proposal}
+
+\ifthenelse{\equal{\Jenis}{Proposal}}{%
+  \newcommand{\juduljenis}{PROPOSAL TUGAS AKHIR}%
+  \newcommand{\jenisjudul}{Proposal Tugas Akhir}%
+}{%
+  \newcommand{\juduljenis}{LAPORAN TUGAS AKHIR}%
+  \newcommand{\jenisjudul}{Laporan Tugas Akhir}%
+}
+
+\begin{document}
+
+%==================================================================
+% BAGIAN AWAL PROPOSAL
+%==================================================================
+\include{untouch/xx-sampul}
+\include{untouch/xx-halamanjudul}
+
+% Halaman judul dihitung sebagai halaman i tetapi tidak dicetak,
+% sehingga Lembar Pengesahan bernomor ii
+\pagenumbering{roman}
+\setcounter{page}{2}
+
+\include{untouch/xx-pengesahan-proposal}
+\include{a2-abstrak}
+\include{untouch/xx-daftar}
+
+%==================================================================
+% BAGIAN UTAMA PROPOSAL: BAB 1 - BAB 3
+%==================================================================
+\clearpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\include{b1-bab1}
+\include{b2-bab2}
+\include{b3-bab3}
+
+%==================================================================
+% BAGIAN AKHIR
+%==================================================================
+\input{untouch/xx-daftarpustaka}
+\input{a10-lampiran}
+
+\end{document}

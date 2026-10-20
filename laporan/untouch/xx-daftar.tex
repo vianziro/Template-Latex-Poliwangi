@@ -1,0 +1,31 @@
+%==================================================================
+% DAFTAR ISI, DAFTAR TABEL, DAFTAR GAMBAR
+% Semua memakai jarak spasi 1
+%==================================================================
+\makeatletter
+
+%--- Daftar Isi ----------------------------------------------------
+\clearpage
+\chapter*{DAFTAR ISI}
+\frontmatterentry{DAFTAR ISI}
+\begin{spacing}{1}
+\@starttoc{toc}
+\end{spacing}
+
+%--- Daftar Tabel --------------------------------------------------
+\clearpage
+\chapter*{DAFTAR TABEL}
+\frontmatterentry{DAFTAR TABEL}
+\begin{spacing}{1}
+\@starttoc{lot}
+\end{spacing}
+
+%--- Daftar Gambar -------------------------------------------------
+\clearpage
+\chapter*{DAFTAR GAMBAR}
+\frontmatterentry{DAFTAR GAMBAR}
+\begin{spacing}{1}
+\@starttoc{lof}
+\end{spacing}
+
+\makeatother

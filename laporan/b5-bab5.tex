@@ -1,0 +1,45 @@
+%==================================================================
+% BAB 5 PENUTUP
+%  5.1 Kesimpulan
+%  5.2 Saran
+%==================================================================
+\chapter{PENUTUP}
+\label{chap:penutup}
+
+%------------------------------------------------------------------
+\section{Kesimpulan}
+%------------------------------------------------------------------
+
+Berdasarkan hasil perancangan, pengujian, dan pembahasan yang telah
+diuraikan, dapat disimpulkan sebagai berikut.
+\begin{packed_enum}
+  \item Sistem deteksi kesegaran ikan berhasil dirancang bangun
+        menggunakan kamera digital di dalam kotak akusisi dengan dua
+        lampu LED yang menghasilkan pencahayaan seragam pada seluruh
+        citra.
+  \item Ekstraksi ciri warna pada ruang HSV menghasilkan enam ciri
+        berupa nilai rata-rata dan simpangan baku kanal $H$, $S$, dan
+        $V$ yang mampu membedakan tiga tingkat kesegaran ikan.
+  \item Jaringan saraf tiruan dengan arsitektur 6-16-8-3 mencapai
+        akurasi 92,33\% pada pengujian \textit{5-fold cross validation},
+        dengan presisi tertinggi pada kelas segar sebesar 96,94\%.
+  \item Kesalahan klasifikasi terbanyak terjadi antara kelas cukup
+        segar dan tidak segar karena kemiripan warna insang pada kedua
+        kelas tersebut.
+\end{packed_enum}
+
+%------------------------------------------------------------------
+\section{Saran}
+%------------------------------------------------------------------
+
+Beberapa saran yang dapat diberikan untuk pengembangan selanjutnya
+adalah sebagai berikut.
+\begin{packed_enum}
+  \item Penelitian selanjutnya dapat menambahkan ciri tekstur insang
+        dan bentuk mata untuk memperkecil kesalahan antara kelas cukup
+        segar dan tidak segar.
+  \item Sistem dapat dikembangkan menjadi aplikasi telepon pintar agar
+        lebih mudah digunakan oleh pedagang di pasar.
+  \item Penambahan jumlah dan variasi jenis ikan pada data latih perlu
+        dilakukan agar model dapat digunakan secara lebih umum.
+\end{packed_enum}

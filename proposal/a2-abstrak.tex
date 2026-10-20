@@ -1,0 +1,68 @@
+%==================================================================
+% ABSTRAK (Bahasa Indonesia)
+% Acuan: Pedoman Lampiran 9A
+%   - judul TA 14 pt tebal, rata tengah, spasi 1
+%   - nama, NIM, pembimbing 2 spasi di bawah judul
+%   - kata ABSTRAK 2 spasi di bawah nama, 14 pt tebal
+%   - isi abstrak spasi 1, baris pertama masuk 1,25 cm
+%   - maksimal 350 kata, kata kunci 3-5 kata
+%==================================================================
+\clearpage
+\thispagestyle{plain}
+\frontmatterentry{ABSTRAK}
+
+\begin{spacing}{1}
+\begin{center}
+{\fontsize{14}{16.8}\selectfont\bfseries \MakeUppercase{\judulid}\par}
+\end{center}
+
+\vspace{2\baselineskip}
+
+\noindent
+\begin{tabular}{@{}l@{\hspace{0.6em}}c@{\hspace{0.6em}}p{10.8cm}@{}}
+Nama mahasiswa & : & \penulis \\
+NIM            & : & \nim \\
+Pembimbing     & : & 1.\ \pembimbingA \\
+               &   & 2.\ \pembimbingB \\
+\end{tabular}
+
+\vspace{2\baselineskip}
+
+\begin{center}
+{\fontsize{14}{16.8}\selectfont\bfseries ABSTRAK\par}
+\end{center}
+
+\vspace{2\baselineskip}
+
+%--- Isi abstrak: ganti dengan ringkasan penelitian Anda -------------
+Penurunan mutu kesegaran ikan terjadi sangat cepat setelah ikan
+ditangkap, sehingga penilaian kesegaran secara cepat dan objektif
+menjadi kebutuhan penting bagi pembeli maupun pelaku usaha perikanan.
+Selama ini penilaian kesegaran masih dilakukan secara organoleptik
+oleh tenaga terlatih sehingga hasilnya bersifat subjektif dan sulit
+dilakukan dalam jumlah besar. Penelitian ini bertujuan merancang
+bangun sistem deteksi kesegaran ikan berbasis pengolahan citra digital
+dan jaringan saraf tiruan yang mampu mengklasifikasikan tingkat
+kesegaran ikan secara otomatis. Citra mata dan insang ikan diambil
+menggunakan kamera digital pada kotak pengambilan gambar dengan
+pencahayaan tetap, kemudian diolah melalui tahap penyekalaan ukuran,
+perbaikan kontras, dan ekstraksi ciri warna pada ruang warna HSV.
+Ciri yang diperoleh digunakan sebagai masukan jaringan saraf tiruan
+dengan arsitektur perambatan balik dua lapisan tersembunyi. Pengujian
+dilakukan terhadap 300 citra ikan yang terdiri atas tiga kelas
+kesegaran, yaitu segar, cukup segar, dan tidak segar. Hasil pengujian
+menunjukkan akurasi klasifikasi sebesar 93,33\% dengan waktu
+pemrosesan rata-rata 0,42 detik per citra. Nilai presisi dan perolehan
+tertinggi diperoleh pada kelas ikan segar, sedangkan kesalahan
+terbanyak terjadi antara kelas cukup segar dan tidak segar karena
+kemiripan warna insang. Dengan demikian sistem yang dirancang dapat
+digunakan sebagai alternatif penilaian kesegaran ikan secara cepat,
+objektif, dan tidak merusak.
+
+\vspace{3\baselineskip}
+
+\noindent
+\textbf{Kata kunci:} jaringan saraf tiruan, kesegaran ikan, pengolahan
+citra digital, ruang warna HSV
+%-------------------------------------------------------------------
+\end{spacing}

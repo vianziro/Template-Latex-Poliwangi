@@ -1,0 +1,189 @@
+%==================================================================
+% BAB 3 METODE PENELITIAN
+% Berisi waktu dan tempat, alat dan bahan, tahapan penelitian,
+% rancangan sistem, pengujian, dan jadwal pelaksanaan.
+%==================================================================
+\chapter{METODE PENELITIAN}
+\label{chap:metode}
+
+%------------------------------------------------------------------
+\section{Waktu dan Tempat Pelaksanaan}
+%------------------------------------------------------------------
+
+Penelitian dilaksanakan pada bulan Februari sampai dengan Juni
+\tahun. Pengambilan data citra dilakukan di Pasar Banyuwangi, sedangkan
+proses pengolahan citra dan pelatihan jaringan saraf tiruan dilakukan
+di Laboratorium Komputer Program Studi \prodi\ \institusi.
+
+%------------------------------------------------------------------
+\section{Alat dan Bahan}
+%------------------------------------------------------------------
+
+Alat dan bahan yang digunakan pada penelitian ini disajikan pada
+\cref{tab:alatbahan}.
+
+\begin{table}[H]
+\caption{Alat dan Bahan Penelitian}
+\label{tab:alatbahan}
+\begin{spacing}{1}
+\centering
+\begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}p{0.8cm}|X|>{\centering\arraybackslash}p{2.4cm}|}
+\hline
+\rowcolor{blue!12}
+\textbf{No} & \textbf{Nama Alat/Bahan} & \textbf{Jumlah} \\
+\hline
+1 & Kamera digital 12 megapiksel & 1 unit \\
+\hline
+2 & Kotak akusisi citra berukuran 40 cm $\times$ 30 cm $\times$ 30 cm & 1 unit \\
+\hline
+3 & Lampu \textit{light emitting diode} (LED) 12 watt & 2 buah \\
+\hline
+4 & Ikan bandeng segar & 100 ekor \\
+\hline
+5 & Komputer dengan prosesor \textit{Intel Core i5} & 1 unit \\
+\hline
+6 & Perangkat lunak Python 3.11 dan OpenCV & 1 paket \\
+\hline
+\end{tabularx}
+\par\vspace{2pt}
+\raggedright\noindent Sumber: perencanaan penelitian (2024)
+\end{spacing}
+\end{table}
+
+%------------------------------------------------------------------
+\section{Tahapan Penelitian}
+%------------------------------------------------------------------
+
+Penelitian dilaksanakan melalui beberapa tahap yang saling berkaitan.
+Tahapan tersebut digambarkan pada \cref{fig:tahapan}.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[node distance=0.5cm]
+  \node (mulai)    [mulai]                        {Mulai};
+  \node (studi)    [proses, below=of mulai]       {Studi literatur dan\\penyusunan instrumen};
+  \node (akuisisi) [proses, below=of studi]       {Akuisisi citra mata\\dan insang ikan};
+  \node (pra)      [proses, below=of akuisisi]    {Praproses: \textit{resize},\\perbaikan kontras};
+  \node (ciri)     [proses, below=of pra]         {Ekstraksi ciri warna\\pada ruang HSV};
+  \node (latih)    [proses, below=of ciri]        {Pelatihan jaringan\\saraf tiruan};
+  \node (uji)      [proses, below=of latih]       {Pengujian model};
+  \node (keputusan)[keputusan, below=of uji]      {Akurasi\\$\geq 90\%$?};
+  \node (analisis) [proses, below=of keputusan]   {Analisis hasil dan\\penyusunan laporan};
+  \node (selesai)  [mulai, below=of analisis]     {Selesai};
+
+  \draw [panah] (mulai)    -- (studi);
+  \draw [panah] (studi)    -- (akuisisi);
+  \draw [panah] (akuisisi) -- (pra);
+  \draw [panah] (pra)      -- (ciri);
+  \draw [panah] (ciri)     -- (latih);
+  \draw [panah] (latih)    -- (uji);
+  \draw [panah] (uji)      -- (keputusan);
+  \draw [panah] (keputusan) -- node[right, font=\small] {Ya} (analisis);
+  \draw [panah] (analisis) -- (selesai);
+
+  % Jalur kembali bila akurasi belum tercapai
+  \draw [panah] (keputusan.east) -- ++(1.2,0)
+        |- node[pos=0.25, right, font=\small] {Tidak} (latih.east);
+\end{tikzpicture}
+\caption{Diagram Alir Tahapan Penelitian}
+\label{fig:tahapan}
+\end{figure}
+
+%------------------------------------------------------------------
+\section{Perancangan Sistem}
+%------------------------------------------------------------------
+
+\subsection{Akuisisi Citra}
+
+Pengambilan citra dilakukan di dalam kotak akusisi dengan dua lampu LED
+yang dipasang pada sudut 45 derajat terhadap bidang objek. Jarak kamera
+ke objek ditetapkan 25 cm dan seluruh citra diambil dengan pengaturan
+ISO, kecepatan rana, serta panjang fokus yang sama agar intensitas
+cahaya antar citra tetap seragam.
+
+\subsection{Praproses Citra}
+
+Citra hasil akuisisi disekala ulang menjadi $256 \times 256$ piksel
+menggunakan interpolasi \textit{bilinear}. Perbaikan kontras dilakukan
+dengan perataan histogram untuk memperjelas perbedaan warna pada mata
+dan insang ikan.
+
+\subsection{Ekstraksi Ciri Warna}
+
+Ekstraksi ciri dilakukan pada ruang warna HSV menggunakan
+\cref{eq:hsv}. Nilai rata-rata dan simpangan baku setiap kanal
+dihitung dan dijadikan satu vektor ciri berukuran enam dimensi, yaitu
+$\bar{H}$, $\bar{S}$, $\bar{V}$, $s_H$, $s_S$, dan $s_V$.
+
+\subsection{Klasifikasi}
+
+Vektor ciri dinormalisasi ke rentang 0 sampai 1, kemudian digunakan
+sebagai masukan jaringan saraf tiruan dengan arsitektur 6 neuron
+masukan, dua lapisan tersembunyi berisi 16 dan 8 neuron, serta 3 neuron
+keluaran yang mewakili kelas segar, cukup segar, dan tidak segar.
+
+%------------------------------------------------------------------
+\section{Pengujian dan Evaluasi}
+%------------------------------------------------------------------
+
+Pengujian dilakukan menggunakan \textit{k-fold cross validation} dengan
+$k = 5$. Kinerja sistem diukur menggunakan akurasi seperti pada
+\cref{eq:akurasi}.
+
+\begin{equation}
+\mathrm{Akurasi} = \frac{\text{jumlah data uji yang benar}}{\text{jumlah seluruh data uji}} \times 100\%
+\label{eq:akurasi}
+\end{equation}
+
+\noindent Selain akurasi, dihitung pula presisi dan perolehan
+(\textit{recall}) untuk setiap kelas menggunakan
+\cref{eq:presisi,eq:recall}.
+
+\begin{equation}
+\mathrm{Presisi} = \frac{TP}{TP+FP} \times 100\%
+\label{eq:presisi}
+\end{equation}
+
+\begin{equation}
+\mathrm{Perolehan} = \frac{TP}{TP+FN} \times 100\%
+\label{eq:recall}
+\end{equation}
+
+\noindent dengan $TP$ adalah \textit{true positive}, $FP$ adalah
+\textit{false positive}, dan $FN$ adalah \textit{false negative}.
+
+%------------------------------------------------------------------
+\section{Jadwal Pelaksanaan}
+%------------------------------------------------------------------
+
+Jadwal pelaksanaan penelitian disusun dalam bentuk \textit{bar-chart}
+seperti pada \cref{tab:jadwal}.
+
+\begin{table}[H]
+\caption{Model \textit{Bar-Chart} Penyusunan Jadwal Pelaksanaan Tugas Akhir}
+\label{tab:jadwal}
+\begin{spacing}{1}
+\centering
+\begin{tabular}{|>{\raggedright\arraybackslash}p{5.2cm}|*{6}{>{\centering\arraybackslash}p{0.9cm}|}}
+\hline
+\multirow{2}{*}{\textbf{Jenis Kegiatan}} & \multicolumn{6}{c|}{\textbf{Bulan Ke-}} \\
+\cline{2-7}
+ & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} \\
+\hline
+Studi literatur            & \cellcolor{blue!25} & & & & & \\
+\hline
+Penyusunan instrumen       & \cellcolor{blue!25} & \cellcolor{blue!25} & & & & \\
+\hline
+Akuisisi citra             & & \cellcolor{blue!25} & & & & \\
+\hline
+Praproses dan ekstraksi    & & & \cellcolor{blue!25} & & & \\
+\hline
+Pelatihan dan pengujian    & & & & \cellcolor{blue!25} & & \\
+\hline
+Analisis dan penulisan     & & & & & \cellcolor{blue!25} & \cellcolor{blue!25} \\
+\hline
+\end{tabular}
+\par\vspace{2pt}
+\raggedright\noindent Sumber: perencanaan penelitian (2024)
+\end{spacing}
+\end{table}

@@ -1,0 +1,100 @@
+%==================================================================
+% FILE UTAMA
+% Template Tugas Akhir Politeknik Negeri Banyuwangi
+% Proposal dan Laporan dalam satu berkas
+%
+% Cara memakai:
+%   1. Isi identitas di  a0-identitas.tex
+%   2. Tulis isi bab di  b1-bab1.tex  sampai  b5-bab5.tex
+%   3. Tambah referensi di  a9-pustaka.bib
+%   4. Kompilasi: pdflatex -> bibtex -> pdflatex -> pdflatex
+%
+% Untuk berganti antara Proposal dan Laporan, ubah satu baris
+% \Jenis di bawah ini (atau pakai build.sh).
+%==================================================================
+
+\documentclass[12pt,a4paper,oneside,fleqn]{report}
+
+\input{a0-identitas}
+\input{untouch/xx-preambles}
+
+%--- Pilih salah satu: Proposal atau Laporan ----------------------
+\providecommand{\Jenis}{Laporan}
+
+\ifthenelse{\equal{\Jenis}{Proposal}}{%
+  \newcommand{\juduljenis}{PROPOSAL TUGAS AKHIR}%
+  \newcommand{\jenisjudul}{Proposal Tugas Akhir}%
+}{%
+  \newcommand{\juduljenis}{LAPORAN TUGAS AKHIR}%
+  \newcommand{\jenisjudul}{Laporan Tugas Akhir}%
+}
+
+\begin{document}
+
+\ifthenelse{\equal{\Jenis}{Proposal}}{%
+%==================================================================
+% BAGIAN AWAL PROPOSAL
+% (Pedoman Tabel 6.3)
+%==================================================================
+  \include{untouch/xx-sampul}
+  \include{untouch/xx-halamanjudul}
+  % Halaman judul dihitung sebagai halaman i tetapi tidak dicetak
+  % sehingga Lembar Pengesahan bernomor ii (Pedoman Tabel 6.3/6.5)
+  \pagenumbering{roman}
+  \setcounter{page}{2}
+  \include{untouch/xx-pengesahan-proposal}
+  \include{a2-abstrak}
+  \include{untouch/xx-daftar}
+
+%==================================================================
+% BAGIAN UTAMA PROPOSAL: BAB 1 - BAB 3
+%==================================================================
+  \clearpage
+  \pagenumbering{arabic}
+  \setcounter{page}{1}
+  \include{b1-bab1}
+  \include{b2-bab2}
+  \include{b3-bab3}
+
+}{%
+%==================================================================
+% BAGIAN AWAL LAPORAN
+% (Pedoman Tabel 6.5)
+%==================================================================
+  \include{untouch/xx-sampul}
+  \include{untouch/xx-halamanjudul}
+  % Halaman judul dihitung sebagai halaman i tetapi tidak dicetak
+  % sehingga Lembar Pengesahan bernomor ii (Pedoman Tabel 6.3/6.5)
+  \pagenumbering{roman}
+  \setcounter{page}{2}
+  \include{a5-persembahan}
+  \include{a6-motto}
+  \include{a4-pernyataan}
+  \include{untouch/xx-pengesahan-laporan}
+  \include{a2-abstrak}
+  \include{a3-abstract}
+  \include{a7-katapengantar}
+  \include{untouch/xx-daftar}
+  \include{a8-daftarsimbol}
+  \daftarlampiran
+
+%==================================================================
+% BAGIAN UTAMA LAPORAN: BAB 1 - BAB 5
+%==================================================================
+  \clearpage
+  \pagenumbering{arabic}
+  \setcounter{page}{1}
+  \include{b1-bab1}
+  \include{b2-bab2}
+  \include{b3-bab3}
+  \include{b4-bab4}
+  \include{b5-bab5}
+}
+
+%==================================================================
+% BAGIAN AKHIR
+%==================================================================
+\input{untouch/xx-daftarpustaka}
+\input{a10-lampiran}
+
+\end{document}

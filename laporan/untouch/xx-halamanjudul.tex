@@ -1,0 +1,73 @@
+%==================================================================
+% HALAMAN JUDUL (sampul dalam)
+% Acuan: Pedoman Lampiran 5
+%==================================================================
+\begin{titlepage}
+\thispagestyle{empty}%
+\centering
+
+\vspace*{0.3cm}
+
+%--- Judul: 14 pt, tebal, kapital, spasi 1,5 -----------------------
+\begin{spacing}{1}
+\begin{center}
+{\fontsize{14}{16.8}\selectfont\bfseries \MakeUppercase{\judulid}\par}
+\end{center}
+\end{spacing}
+
+\vspace{2\baselineskip}
+
+%--- Jenis dokumen: 12 pt, tebal, spasi 1,5 -----------------------
+\begin{spacing}{1}
+\begin{center}
+{\fontsize{12}{14.4}\selectfont\bfseries \juduljenis\par}
+\end{center}
+\end{spacing}
+
+\vspace{2\baselineskip}
+
+\includegraphics[width=4cm,height=4cm,keepaspectratio]{logo-poliwangi.png}
+
+\vspace{2\baselineskip}
+
+%--- Kalimat pengantar, spasi 1,5 ---------------------------------
+\begin{spacing}{1}
+\begin{center}
+{\fontsize{12}{14.4}\selectfont
+ \ifthenelse{\equal{\Jenis}{Proposal}}{%
+   Proposal Tugas Akhir ini dibuat dan diajukan sebagai salah satu
+   syarat untuk melaksanakan Tugas Akhir pada Program Studi
+   \jenjang\ \prodi\ \institusi.\par
+ }{%
+   Tugas Akhir ini dibuat dan diajukan untuk memenuhi salah satu
+   syarat kelulusan Program Studi \jenjang\ \prodi\ dan mencapai
+   gelar \gelar.\par
+ }}
+\end{center}
+\end{spacing}
+
+\vspace{2\baselineskip}
+
+%--- Nama dan NIM: 12 pt, tebal, spasi 1,5 ------------------------
+\begin{spacing}{1}
+\begin{center}
+{\fontsize{12}{14.4}\selectfont\bfseries
+ Oleh:\par
+ \penulis\par
+ NIM. \nim\par}
+\end{center}
+\end{spacing}
+
+\vspace{2\baselineskip}
+
+%--- Program studi dan tahun: 16 pt, tebal ------------------------
+\begin{spacing}{1}
+\begin{center}
+{\fontsize{16}{19.2}\selectfont\bfseries
+ PROGRAM STUDI \MakeUppercase{\prodi}\par
+ \MakeUppercase{\institusi}\par
+ \tahun\par}
+\end{center}
+\end{spacing}
+
+\end{titlepage}

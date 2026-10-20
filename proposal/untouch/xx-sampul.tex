@@ -1,0 +1,66 @@
+%==================================================================
+% SAMPUL MUKA / SOFTCOVER
+% Acuan: Pedoman Lampiran 4
+%
+% Ingin sampul berwarna sesuai program studi? Hapus tanda % pada
+% empat baris tikz di bawah (butuh dua kali kompilasi).
+%==================================================================
+\begin{titlepage}
+\thispagestyle{empty}%
+\centering
+
+%--- Latar berwarna (opsional) -------------------------------------
+% \definecolor{warnasampul}{HTML}{\warnasampul}
+% \begin{tikzpicture}[remember picture, overlay]
+%   \fill[warnasampul] (current page.south west) rectangle (current page.north east);
+% \end{tikzpicture}%
+%-------------------------------------------------------------------
+
+\vspace*{0.5cm}
+
+%--- Judul: 14 pt, tebal, kapital, spasi 1 -------------------------
+\begin{spacing}{1}
+\begin{center}
+{\fontsize{14}{16.8}\selectfont\bfseries \MakeUppercase{\judulid}\par}
+\end{center}
+\end{spacing}
+
+\vspace{4\baselineskip}
+
+%--- Jenis dokumen: 12 pt, tebal, spasi 1 --------------------------
+\begin{spacing}{1}
+\begin{center}
+{\fontsize{12}{14.4}\selectfont\bfseries \juduljenis\par}
+\end{center}
+\end{spacing}
+
+\vspace{2\baselineskip}
+
+%--- Lambang Poliwangi 4 cm x 4 cm --------------------------------
+\includegraphics[width=4cm,height=4cm,keepaspectratio]{logo-poliwangi.png}
+
+\vspace{3\baselineskip}
+
+%--- Nama dan NIM: 12 pt, tebal, spasi 1 --------------------------
+\begin{spacing}{1}
+\begin{center}
+{\fontsize{12}{14.4}\selectfont\bfseries
+ Oleh:\par
+ \penulis\par
+ NIM. \nim\par}
+\end{center}
+\end{spacing}
+
+\vspace{2\baselineskip}
+
+%--- Program studi dan tahun: 16 pt, tebal, spasi 1 ----------------
+\begin{spacing}{1}
+\begin{center}
+{\fontsize{16}{19.2}\selectfont\bfseries
+ PROGRAM STUDI \MakeUppercase{\prodi}\par
+ \MakeUppercase{\institusi}\par
+ \tahun\par}
+\end{center}
+\end{spacing}
+
+\end{titlepage}

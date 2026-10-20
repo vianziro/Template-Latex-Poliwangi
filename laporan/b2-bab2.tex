@@ -1,0 +1,139 @@
+%==================================================================
+% BAB 2 TINJAUAN PUSTAKA
+% Berisi teori pendukung dan penelitian terdahulu.
+% Perhatikan contoh penulisan rumus, tabel, dan sitasi di bab ini.
+%==================================================================
+\chapter{TINJAUAN PUSTAKA}
+\label{chap:tinjauanpustaka}
+
+%------------------------------------------------------------------
+\section{Kesegaran Ikan}
+%------------------------------------------------------------------
+
+Kesegaran ikan adalah kondisi mutu ikan yang ditentukan oleh perubahan
+biokimia dan mikrobiologis setelah ikan ditangkap. Menurut
+\citet{estiasih2015}, kemunduran mutu ikan dipengaruhi oleh suhu
+penyimpanan, cara penanganan, dan kandungan lemak pada tubuh ikan.
+Semakin tinggi suhu penyimpanan, semakin cepat pula proses kemunduran
+mutu berlangsung.
+
+Secara organoleptik, kesegaran ikan dapat dinilai melalui penampakan
+mata, warna insang, tekstur daging, dan bau. Ikan segar memiliki mata
+yang jernih dan cembung, insang berwarna merah cerah, serta daging yang
+kenyal. Seiring bertambahnya waktu penyimpanan, mata menjadi keruh dan
+cekung, insang berubah pucat hingga kecoklatan, dan daging menjadi
+lembek. Perubahan warna tersebut menjadi dasar pemilihan ciri warna
+pada penelitian ini.
+
+%------------------------------------------------------------------
+\section{Pengolahan Citra Digital}
+%------------------------------------------------------------------
+
+Pengolahan citra digital merupakan proses mengolah citra menjadi citra
+lain atau menjadi data yang dapat diinterpretasikan oleh komputer
+\citep{gonzalez2018}. Citra digital direpresentasikan sebagai fungsi
+dua dimensi $f(x,y)$ dengan $x$ dan $y$ menyatakan koordinat spasial
+dan nilai fungsi menyatakan intensitas atau tingkat kecerahan piksel
+pada koordinat tersebut.
+
+Tahapan pengolahan citra yang digunakan pada penelitian ini meliputi
+penyekalaan ukuran citra, perbaikan kontras, pemisahan kanal warna, dan
+ekstraksi ciri statistik. Penyekalaan ukuran dilakukan agar seluruh
+citra masukan memiliki dimensi yang seragam sebelum diproses lebih
+lanjut.
+
+%------------------------------------------------------------------
+\section{Ruang Warna HSV}
+%------------------------------------------------------------------
+
+Ruang warna HSV memisahkan informasi warna (\textit{hue}) dari
+informasi kecerahan (\textit{value}), sehingga lebih tahan terhadap
+perubahan intensitas cahaya dibandingkan ruang warna RGB. Konversi
+nilai RGB ke HSV dihitung menggunakan \cref{eq:hsv}.
+
+\begin{equation}
+\begin{aligned}
+V &= \max(R,G,B) \\
+S &= \begin{cases}
+       \dfrac{V-\min(R,G,B)}{V}, & V \neq 0 \\[6pt]
+       0, & V = 0
+     \end{cases} \\
+H &= \begin{cases}
+       60^{\circ}\left(\dfrac{G-B}{V-\min(R,G,B)}\right), & V = R \\[6pt]
+       60^{\circ}\left(2+\dfrac{B-R}{V-\min(R,G,B)}\right), & V = G \\[6pt]
+       60^{\circ}\left(4+\dfrac{R-G}{V-\min(R,G,B)}\right), & V = B
+     \end{cases}
+\end{aligned}
+\label{eq:hsv}
+\end{equation}
+
+\noindent dengan $R$, $G$, dan $B$ adalah nilai kanal merah, hijau, dan
+biru yang telah dinormalisasi pada rentang 0 sampai 1. Nilai $H$
+dinyatakan dalam derajat, sedangkan $S$ dan $V$ berada pada rentang 0
+sampai 1.
+
+%------------------------------------------------------------------
+\section{Jaringan Saraf Tiruan}
+%------------------------------------------------------------------
+
+Jaringan saraf tiruan dengan algoritme perambatan balik
+(\textit{backpropagation}) bekerja melalui dua tahap, yaitu perambatan
+maju untuk menghitung keluaran dan perambatan balik untuk memperbaiki
+bobot. Keluaran setiap neuron dihitung menggunakan fungsi aktivasi
+sigmoid seperti pada \cref{eq:sigmoid}.
+
+\begin{equation}
+y_j = \frac{1}{1+e^{-\left(\sum_{i=1}^{n} w_{ij}x_i + b_j\right)}}
+\label{eq:sigmoid}
+\end{equation}
+
+\noindent dengan $x_i$ adalah masukan ke-$i$, $w_{ij}$ adalah bobot dari
+masukan ke-$i$ menuju neuron ke-$j$, dan $b_j$ adalah bias neuron ke-$j$.
+Perbaikan bobot dilakukan dengan meminimumkan galat yang dinyatakan
+pada \cref{eq:galat}.
+
+\begin{equation}
+E = \frac{1}{2}\sum_{j=1}^{m}\left(t_j-y_j\right)^2
+\label{eq:galat}
+\end{equation}
+
+\noindent dengan $t_j$ adalah target keluaran dan $y_j$ adalah keluaran
+jaringan. Bobot diperbarui sebesar $w_{ij} \leftarrow w_{ij} +
+\eta\,\delta_j\,x_i$, dengan $\eta$ adalah laju pembelajaran dan
+$\delta_j$ adalah gradien galat pada neuron ke-$j$.
+
+%------------------------------------------------------------------
+\section{Penelitian Terdahulu}
+%------------------------------------------------------------------
+
+Beberapa penelitian sebelumnya telah memanfaatkan citra digital untuk
+menilai kesegaran ikan. Ringkasan penelitian tersebut disajikan pada
+\cref{tab:terdahulu}.
+
+\begin{table}[H]
+\caption{Perbandingan Penelitian Terdahulu tentang Deteksi Kesegaran Ikan}
+\label{tab:terdahulu}
+\begin{spacing}{1}
+\centering
+\begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}p{0.8cm}|X|>{\raggedright\arraybackslash}p{3.2cm}|>{\centering\arraybackslash}p{1.6cm}|}
+\hline
+\rowcolor{blue!12}
+\textbf{No} & \textbf{Peneliti} & \textbf{Metode} & \textbf{Akurasi} \\
+\hline
+1 & \citet{prasetyo2021} & JST perambatan balik dengan ciri warna RGB & 88,00\% \\
+\hline
+2 & \citet{satria2004} & Analisis tekstur insang ikan & 84,50\% \\
+\hline
+3 & \citet{sudirman2010} & Klasifikasi warna mata ikan & 81,25\% \\
+\hline
+\end{tabularx}
+\par\vspace{2pt}
+\raggedright\noindent Sumber: hasil kajian pustaka (2024)
+\end{spacing}
+\end{table}
+
+Berdasarkan \cref{tab:terdahulu}, sebagian besar penelitian menggunakan
+ciri warna dan tekstur dengan akurasi di bawah 90\%. Penelitian ini
+menggabungkan ciri warna pada ruang HSV dengan jaringan saraf tiruan
+dua lapisan tersembunyi, yang diharapkan dapat meningkatkan akurasi
+klasifikasi.

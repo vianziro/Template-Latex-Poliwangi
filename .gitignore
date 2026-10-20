@@ -1,0 +1,20 @@
+# Berkas bantu hasil kompilasi LaTeX — tidak perlu disimpan di git
+*.aux
+*.bbl
+*.blg
+*.lof
+*.log
+*.lot
+*.loa
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+
+# Hasil kompilasi langsung (pakai build.sh untuk membuatnya)
+/proposal/Proposal.pdf
+/laporan/Laporan.pdf
+
+# Berkas sistem
+.DS_Store
