@@ -10,7 +10,7 @@
 [![LaTeX](https://img.shields.io/badge/Dibuat%20dengan-LaTeX-008080?style=for-the-badge&logo=latex&logoColor=white)](https://www.latex-project.org/)
 [![Overleaf](https://img.shields.io/badge/Buka%20di-Overleaf-47A141?style=for-the-badge&logo=overleaf&logoColor=white)](https://www.overleaf.com/)
 [![Pedoman](https://img.shields.io/badge/Pedoman-Mutu%20TA%202023-0057A8?style=for-the-badge&logo=readthedocs&logoColor=white)](#-sudah-sesuai-pedoman-mutu-ta-2023)
-[![Lisensi: MIT](https://img.shields.io/badge/Lisensi-MIT-ffd400?style=for-the-badge&logo=opensourceinitiative&logoColor=black)](#-lisensi)
+[![Lisensi: MIT](https://img.shields.io/badge/Lisensi-MIT-ffd400?style=for-the-badge&logo=opensourceinitiative&logoColor=black)](LICENSE)
 [![Status](https://img.shields.io/badge/status-aktif-success?style=for-the-badge&logo=github&logoColor=white)](https://github.com/vianziro/Template-Latex-Poliwangi)
 
 *Tulis Tugas Akhir sekali, jadi dokumen rapi untuk Proposal maupun Laporan.*
