@@ -8,14 +8,68 @@
 **Politeknik Negeri Banyuwangi**
 
 [![LaTeX](https://img.shields.io/badge/Dibuat%20dengan-LaTeX-008080?style=for-the-badge&logo=latex&logoColor=white)](https://www.latex-project.org/)
-[![Overleaf](https://img.shields.io/badge/Buka%20di-Overleaf-47A141?style=for-the-badge&logo=overleaf&logoColor=white)](https://www.overleaf.com/)
 [![Pedoman](https://img.shields.io/badge/Pedoman-Mutu%20TA%202023-0057A8?style=for-the-badge&logo=readthedocs&logoColor=white)](#-sudah-sesuai-pedoman-mutu-ta-2023)
 [![Lisensi: MIT](https://img.shields.io/badge/Lisensi-MIT-ffd400?style=for-the-badge&logo=opensourceinitiative&logoColor=black)](LICENSE)
 [![Status](https://img.shields.io/badge/status-aktif-success?style=for-the-badge&logo=github&logoColor=white)](https://github.com/vianziro/Template-Latex-Poliwangi)
+[![Wiki](https://img.shields.io/badge/Dokumentasi-Wiki-2496ED?style=for-the-badge&logo=gitbook&logoColor=white)](https://github.com/vianziro/Template-Latex-Poliwangi/wiki)
 
 *Tulis Tugas Akhir sekali, jadi dokumen rapi untuk Proposal maupun Laporan.*
 
+**Belum punya LaTeX di komputer? Jangan pasang apa pun — klik tombol di bawah,
+semua bisa diedit langsung di browser.**
+
+### ☁️ Buka Template Ini di Overleaf
+
+[![Buka di Overleaf](https://img.shields.io/badge/%E2%8F%B4%20BUKA%20TEMPLATE%20DI%20OVERLEAF-47A141?style=for-the-badge&logo=overleaf&logoColor=white&labelColor=2f6b33)](https://www.overleaf.com/docs?snip_uri=https%3A%2F%2Fgithub.com%2Fvianziro%2FTemplate-Latex-Poliwangi%2Farchive%2Frefs%2Fheads%2Fmain.zip)
+
+<sub>Langsung impor seluruh isi repo (folder `proposal/` + `laporan/`) sebagai
+project Overleaf — sekali klik, tanpa unduh ZIP. Overleaf sudah punya LaTeX,
+Jadi tidak perlu pasang apa pun.</sub>
+
 </div>
+
+---
+
+## ☁️ Buka Langsung di Overleaf (Satu Klik)
+
+Cara termudah memakai template ini **tanpa memasang LaTeX di komputer**:
+
+**Langkah 1** — klik tombol
+[**⏴ BUKA TEMPLATE DI OVERLEAF**](https://www.overleaf.com/docs?snip_uri=https%3A%2F%2Fgithub.com%2Fvianziro%2FTemplate-Latex-Poliwangi%2Farchive%2Frefs%2Fheads%2Fmain.zip)
+di bagian paling atas README
+
+**Langkah 2** — login Overleaf (bisa pakai akun Google, atau daftar gratis)
+
+**Langkah 3** — project **Template-TA-Poliwangi** otomatis terbentuk, dan Anda
+langsung masuk ke editor
+
+**Langkah 4** — pilih berkas `proposal/proposal.tex` atau
+`laporan/laporan.tex` di daftar berkas sebelah kiri
+
+**Langkah 5** — tekan **Recompile** (tombol hijau, atau `Ctrl+Enter` / `Cmd+Enter`).
+PDF Proposal dan Laporan sudah jadi.
+
+<details>
+<summary>⚠️ Kalau tombol Overleaf tidak jalan (klik untuk solusinya)</summary>
+
+1. **Belum login Overleaf** — tombol akan mengantar ke halaman login lebih
+   dulu. Setelah login, klik tombol sekali lagi.
+2. **Repo menjadi private** — Overleaf hanya bisa mengunduh repo publik.
+   Kalau repo Anda private, unduh ZIP-nya manual
+   (`Code → Download ZIP`), lalu di Overleaf pilih **New Project → Upload Project**.
+3. **Cara manual (tanpa tombol)** — buka
+   `https://www.overleaf.com/docs?snip_uri=LINK_ZIP`
+   di browser, tempat `LINK_ZIP` adalah alamat arsip repo (boleh versi
+   terpendek `main.zip`).
+4. **Mau memakai folder saja** — kalau hanya butuh salah satu dokumen, unduh
+   ZIP lalu unggah **hanya** folder `proposal/` atau `laporan/`. Kedua folder
+   sudah mandiri dan tetap bisa dikompilasi sendiri.
+5. **Ganti compiler di Overleaf** — menu **Menu → Settings → Compiler**, pilih
+   **pdfLaTeX**, dan **Main document** diisi `proposal.tex` atau
+   `laporan.tex`. Kalau PDF kosong, hampir selalu karena compiler belum
+   dipilih `pdfLaTeX`.
+
+</details>
 
 ---
 
@@ -113,6 +167,7 @@ ubah isinya. Kutip di teks dengan `\citep{kunciReferensi}`.
 ┣ ⚙️ build.sh                  ← Membangun Proposal & Laporan sekaligus
 ┣ 📄 contoh-Proposal.pdf       ← contoh hasil Proposal
 ┣ 📄 contoh-Laporan.pdf        ← contoh hasil Laporan
+┣ 📁 wiki/                     ← berisi halaman tab Wiki + skrip pengirinya
 ┃
 ┣ 📂 proposal/                 ── 📁 FOLDER MANDIRI UNTUK PROPOSAL
 ┃ ┣ 📝 proposal.tex            ← BERKAS UTAMA, mulai dari sini
@@ -159,7 +214,8 @@ Pilih salah satu cara berikut.
 
 | # | Cara | Untuk siapa | Langkah |
 | --- | --- | --- | --- |
-| 1️⃣ | ☁️ **Overleaf** | Ingin langsung bisa, tanpa instal | Buka [overleaf.com](https://www.overleaf.com/), buat proyek baru, **Upload Project**, lalu unggah folder `proposal/` atau `laporan/` |
+| 0️⃣ | ☁️ **Overleaf — paling mudah** | Ingin langsung bisa, tanpa instal apa pun | Klik tombol [**⏴ BUKA TEMPLATE DI OVERLEAF**](https://www.overleaf.com/docs?snip_uri=https%3A%2F%2Fgithub.com%2Fvianziro%2FTemplate-Latex-Poliwangi%2Farchive%2Frefs%2Fheads%2Fmain.zip) di atas README — project langsung jadi (lihat bagian [Buka Langsung di Overleaf](#-buka-langsung-di-overleaf-satu-klik)) |
+| 1️⃣ | ☁️ **Overleaf manual** | Sudah punya proyek Overleaf, mau unggah sendiri | Buka [overleaf.com](https://www.overleaf.com/), **New Project → Upload Project**, lalu unggah folder `proposal/` atau `laporan/` |
 | 2️⃣ | 🪟 **MikTeX** | Pengguna Windows | Unduh dari [miktex.org](https://miktex.org/download), pilih *For All Users* dan centang *Always install missing packages* |
 | 3️⃣ | 🍎 **MacTeX** | Pengguna macOS | Unduh dari [tug.org/mactex](https://tug.org/mactex/) |
 | 4️⃣ | 🐧 **TeX Live** | Pengguna Linux | `sudo apt install texlive-full` (Ubuntu/Debian) |
@@ -223,6 +279,42 @@ otomatis di TeXstudio.
 > Kompilasi pertama mengumpulkan daftar isi dan referensi, kompilasi kedua
 > menyusunnya ke halaman yang benar. Daftar isi yang masih kosong berarti
 > dokumen baru dikompilasi satu kali.
+
+---
+
+## 📚 Dokumentasi Wiki
+
+Penjelasan yang lebih terperinci ada di **tab Wiki** repo ini
+(<https://github.com/vianziro/Template-Latex-Poliwangi/wiki>):
+
+| Halaman Wiki | Isi |
+| --- | --- |
+| 🏠 [Home](https://github.com/vianziro/Template-Latex-Poliwangi/wiki) | Ringkasan template, tombol Overleaf, dan tautan ke semua halaman |
+| 🚀 [Mulai Cepat](https://github.com/vianziro/Template-Latex-Poliwangi/wiki/Mulai-Cepat) | Lima langkah dari nol sampai PDF, dengan contoh perintah |
+| 📁 [Struktur Folder](https://github.com/vianziro/Template-Latex-Poliwangi/wiki/Struktur-Folder) | Penjelasan setiap berkas di `proposal/` dan `laporan/` |
+| ✅ [Format Sesuai Pedoman](https://github.com/vianziro/Template-Latex-Poliwangi/wiki/Format-Sesuai-Pedoman) | Tabel aturan Pedoman Mutu TA 2023 → pengaturan di template |
+| ✍️ [Cara Menulis di LaTeX](https://github.com/vianziro/Template-Latex-Poliwangi/wiki/Cara-Menulis-di-LaTeX) | Resep tabel, gambar, rumus, sitasi, flowchart, dan lampiran |
+| ❓ [FAQ](https://github.com/vianziro/Template-Latex-Poliwangi/wiki/FAQ) | Jawaban galat yang paling sering muncul |
+
+<details>
+<summary>🗂️ <b>Halaman wiki disimpan di repo ini (folder <code>wiki/</code>)</b> — klik untuk tahu cara memperbaruinya</summary>
+
+Semua halaman wiki tersimpan sebagai berkas Markdown di folder `wiki/` agar
+bisa diedit seperti kode biasa dan diperiksa lewat *commit*.
+
+GitHub baru membuat “repo git” untuk wiki **setelah halaman pertama dibuat lewat
+halaman web**, jadi untuk memasangnya ke tab Wiki:
+
+1. Buka <https://github.com/vianziro/Template-Latex-Poliwangi/wiki>
+2. Klik tombol **Create the first page**, isi judul apa saja, lalu **Save Page**
+3. Jalankan sekali: `./wiki/push-wiki.sh`
+
+Skrip itu akan mengirim seluruh halaman (`Home`, `Mulai Cepat`,
+`Struktur Folder`, `Format Sesuai Pedoman`, `Cara Menulis di LaTeX`, `FAQ`,
+serta `_Sidebar` dan `_Footer`) ke tab Wiki. Perubahan wiki berikutnya cukup
+dilakukan di folder `wiki/` lalu skrip dijalankan ulang.
+
+</details>
 
 ---
 
